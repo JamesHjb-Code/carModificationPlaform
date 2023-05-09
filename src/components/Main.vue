@@ -11,7 +11,7 @@ import { onMounted,ref } from 'vue';
 
 onMounted(()=>{
   const threeCanvas = document.getElementById("threeScene")
-  globalThree.init(threeCanvas)
+  globalThree.loadObj(threeCanvas)
 })
 </script>
 <style lang="scss" scoped>
