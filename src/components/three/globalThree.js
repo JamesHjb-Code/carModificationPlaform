@@ -47,9 +47,15 @@ const globalThree = {
         this.state.renderer.setPixelRatio(window.devicePixelRatio) // 为了兼容高清屏幕
         this.state.renderer.setSize(ele.clientWidth, ele.clientHeight)
         ele.appendChild(this.state.renderer.domElement)
+        this.aninmae()
     },
     // 动画
-
+    aninmae() {
+        this.state.renderer.render(this.state.scene, this.state.camera)
+        window.requestAnimationFrame(() => {
+            this.aninmae()
+        });
+    },
     // 外部模型加载函数
     loadObj() {
         // 加载 glTF 格式的模型

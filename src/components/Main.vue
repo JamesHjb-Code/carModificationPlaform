@@ -8,14 +8,10 @@
 import Header from './layout/Header.vue'
 import globalThree from '@/components/three/globalThree.js'
 import { onMounted,ref } from 'vue';
-const render = ()=>{
-  globalThree.state.renderer.render(globalThree.state.scene, globalThree.state.camera)
-  requestAnimationFrame(render)
-}
+
 onMounted(()=>{
-  const three = document.getElementById("threeScene")
-  globalThree.init(three)
-  render()
+  const threeCanvas = document.getElementById("threeScene")
+  globalThree.init(threeCanvas)
 })
 </script>
 <style lang="scss" scoped>
